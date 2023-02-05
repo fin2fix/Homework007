@@ -16,7 +16,7 @@ int[,] InitRandomMatrix(string message)
   Console.WriteLine();
   Console.WriteLine(message);
   Random rnd = new Random();
-  int[,] matrix = new int[rnd.Next(1,10), rnd.Next(1,10)];
+  int[,] matrix = new int[rnd.Next(5, 10), rnd.Next(5, 10)];
   for (int i = 0; i < matrix.GetLength(0); i++)
   {
     for (int j = 0; j < matrix.GetLength(1); j++)
