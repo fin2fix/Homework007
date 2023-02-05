@@ -17,6 +17,7 @@ int[,] InitRandomMatrix(string message)
   Console.WriteLine(message);
   Random rnd = new Random();
   int[,] matrix = new int[rnd.Next(5, 10), rnd.Next(5, 10)];
+  
   for (int i = 0; i < matrix.GetLength(0); i++)
   {
     for (int j = 0; j < matrix.GetLength(1); j++)
@@ -35,12 +36,12 @@ void PrintMatrix(int[,] matrix)
   }
 }
 
-void FindIsElementExist(int[,] matrix, int AddressElementRow, int AddressElementColumn)
+void FindIsElementExist(int[,] matrix, int addressElementRow, int addressElementColumn)
 {
-  if (AddressElementRow < matrix.GetLength(0) && AddressElementColumn < matrix.GetLength(1))
-  { Console.WriteLine($"Элемент матрицы с адресом ({AddressElementRow},{AddressElementColumn}) - это элемент {matrix[AddressElementRow, AddressElementColumn]}"); }
+  if (addressElementRow < matrix.GetLength(0) && addressElementColumn < matrix.GetLength(1))
+  { Console.WriteLine($"Элемент матрицы с адресом ({addressElementRow},{addressElementColumn}) - это элемент {matrix[addressElementRow, addressElementColumn]}"); }
   else
-  { Console.WriteLine($"Элемент матрицы с адресом ({AddressElementRow},{AddressElementColumn}) - не существует"); }
+  { Console.WriteLine($"Элемент матрицы с адресом ({addressElementRow},{addressElementColumn}) - не существует"); }
 }
 
 (int, int) GetElementAddress(string message)
@@ -62,5 +63,5 @@ void FindIsElementExist(int[,] matrix, int AddressElementRow, int AddressElement
 int[,] matrix = InitRandomMatrix("Сгенерированная случайная матрица");
 PrintMatrix(matrix);
 Console.WriteLine();
-(int AddressElementRows, int AddressElementColumns) = GetElementAddress("Введите требуемый адрес ячейки одной строкой через запятую или точку");
-FindIsElementExist(matrix, AddressElementRows, AddressElementColumns);
+(int addressElementRows, int addressElementColumns) = GetElementAddress("Введите требуемый адрес ячейки одной строкой через запятую или точку");
+FindIsElementExist(matrix, addressElementRows, addressElementColumns);

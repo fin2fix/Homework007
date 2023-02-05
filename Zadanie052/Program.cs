@@ -28,6 +28,7 @@ void PrintMatrix(int[,] matrix)
   {
     for (int j = 0; j < matrix.GetLength(1); j++)
     { Console.Write($"{matrix[i, j]} "); }
+
     Console.WriteLine();
   }
 }
@@ -37,10 +38,12 @@ void FindAverageInColumns(int[,] matrix)
   // GetLength(0) - возвращает количество строк в матрице, GetLength(1) - возвращает количество столбцов 
   Console.WriteLine("Среднее арифметическое элементов в каждом столбце матрицы это");
   int sumElements = 0;
+
   for (int j = 0; j < matrix.GetLength(1); j++)  // до количества столбцов
   {
     for (int i = 0; i < matrix.GetLength(0); i++) //до количества строк
     { sumElements = sumElements + matrix[i, j]; }
+
     Console.Write($"{Math.Round((double)sumElements / (double)matrix.GetLength(0), 1)}; ");  //делим на количество строк
     sumElements = 0;
   }
